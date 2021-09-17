@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
         <meta charset="UTF-8">
         <meta http-equiv="content-language" content="pt-br">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,9 @@
         <style>body {background-color: lightgrey;}</style>
     </head>
     <body>
-        <!--JS PARA O MODAL FUNCIONAR-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <header>   
+    <!--JS PARA O MODAL FUNCIONAR-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">                    
                     <h1 class="titulo">
@@ -33,51 +33,49 @@
                         </il>
                     </ul>
                 </div>
-            </nav>             
+            </nav>    
         </header>
         <main>
-            <section>
-                <div class="container-fluid">                
+        <section>
+        <div class="container-fluid">                
                  <br>
                  <img src="imagens/carro_logo.png" width="20%" height="20%"><h3>ALUGUE SEU VEICULO COM SEGURANÇA E CREDIBILIDADE</h3>
-                 <br>
-                    <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
-                        <div class="col">    
-                            <div class="card mb-4 rounded-3 shadow-sm">
-                                <div class="card-header py-3 text-center"><!--HEADER-->
-                                    <h4 class="my-0 fw-normal">VEÍCULOS DISPONÍVEIS</h4>
-                                </div>
-                                <div class="card-body"><!--BODY-->
-                                    
-
-                                <table class="table table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Modelo</th>
-                                                <th scope="col">Placa</th>
-                                                <th scope="col">Ano</th>
-                                                <th scope="col">Situação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <?php
-                                                    //codigo para listagem de veiculos
-                                                ?>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
+                 <br>  
+            <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
+                <div class="col">    
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3"><!--HEADER-->
+                            <h4 class="my-0 fw-normal">RESERVE JÁ O SEU</h4>
                         </div>
-                  </section>
+                        <div class="card-body"><!--BODY-->
+                            <form action="reserva.php" method="POST">
+                                <label for="inicio">Início da Reserva</label><br>
+                                <input type="datetime-local" name="inicio" required><br><br>
+                                <label for="fim">Fim da Reserva</label><br>
+                                <input type="datetime-local" name="fim" required><br><br>                          
+                                <!-- OPTIONS PROVISÓRIAS -->                               
+                                <label for="veiculos">Veículos Disponíveis</label><br>
+                                    <select id="veiculos" name="veiculos" required>
+                                        <option selected disabled value="0">Selecione</option>
+                                        <option value=" ">veiculo 1</option>
+                                        <option value=" ">veiculo 2</option>
+                                        <option value=" ">veiculo 3</option>
+                                        <option value=" ">veiculo 4</option>
+                                        <option value=" ">veiculo 5</option>
+                                    </select><br><br>                                    
+                                <input name="botao2" type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" value="Cancelar">
+                                <input name="botao1" type="submit" class="btn btn-outline-danger" value="Enviar">
+                            </form>                                
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <section>
         </main>
-        
-                
-        <!--CÓDIGO JANELA MODAL-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            
+            <!--CÓDIGO JANELA MODAL-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -113,8 +111,8 @@
                 </div>
             </div>
             </div>
-    
-    
+
+
         <footer>
             <hr>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -122,6 +120,6 @@
                     <center>Desenvolvido por: Camilla Toniatto</center>
                 </div>
             </nav>
-        </footer>
+        </footer> 
     </body>
 </html>

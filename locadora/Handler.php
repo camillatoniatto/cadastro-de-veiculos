@@ -22,6 +22,13 @@ class Handler{
             break;
             }  
         }
+    //organizando os valores no array    
+    $gravar = $_POST['modelo']."|".$_POST['placa']."|".$_POST['ano']."|".$_POST['estado']."|";
+
+    //salvando array no arquivo de texto
+    $arquivo = fopen('cadastro.txt','a+');
+    fwrite($arquivo,$gravar.PHP_EOL);
+    fclose($arquivo);
     return $a;
     }
 }
