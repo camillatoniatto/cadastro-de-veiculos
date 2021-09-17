@@ -3,17 +3,22 @@ Aplicação web para cadastrar e fazer reservas de veículos em uma empresa.
 
 
 ## Estrutura
-`index.html`: Página inicial, com função de facilicar a navegação.
+`index.php`: Página inicial.
 
-`cadastro.php`: Página com o formulário de cadastramento de veículos.
+`cadastro.txt`: Arquivo txt para guardar arrays.
 
-`cadastro2.php`: Página (provisória?) para verificação do cadastro.
+`cadastro2.php`: Página para verificação do cadastro. (provisória?) 
 
-`disponivel.php`: Página para verificar veículos disponíveis para locação.
+`disponivel.php`: Página para listagem de veículos disponíveis para locação.
+
+`total.php`: Lista o total de veículos. (provisória?) 
+
+`reservas.php`: Página para realização de reservas.
 
 `Handler.php`: Organização e manutenção de arrays do cadastro
 
 
 ## Tecnologias Usadas
 - PHP
-- HTML
+- HTML5
+- Bootsrap
