@@ -27,7 +27,7 @@ class Handler{
 
     //salvando array no arquivo de texto
     $arquivo = fopen('cadastro.txt','a+');
-    fwrite($arquivo,$gravar.PHP_EOL);
+    fwrite($arquivo,$gravar); //.PHP_EOL
     fclose($arquivo);
     return $a;
     }

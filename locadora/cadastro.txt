@@ -1,6 +1,1 @@
-||||
-||||
-uno|BRA1E23|2020|disponivel|
-||||
-||||
-||||
+uno|BRA1E23|2010|Disponivel|teste1|abc123|1980|manutenção|

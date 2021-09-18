@@ -20,67 +20,45 @@
              <nav class="navbar navbar-expand-lg navbar-light bg-light">
                  <div class="container-fluid">                    
                      <h1 class="titulo">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
-                         <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
-                         </svg>  
-                         <b>KATIAU</b>automóveis</h1>
-                     <ul class="nav justify-content-end">
-                         <li class="nav-item">                                                                          
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+                    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+                    </svg>  
+                    <b>KATIAU</b>automóveis</h1>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">                                                                          
                             <a href="index.php"><button type="button" class="btn btn-outline-dark btn-sm">INÍCIO</button></a> 
-                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS DISPONÍVEIS</button></a>
-                             <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVA DE VEÍCULOS</button></a>
-                             <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
-                         </div>
-                         </il>
+                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS</button></a>
+                            <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVAS</button></a>
+                            <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
+                        </il>
                      </ul>
                  </div>
              </nav>             
          </header>
          <main>
              <section>
-                 <div class="container-fluid">                
-                  <br>
-                  <img src="imagens/carro_logo.png" width="20%" height="20%"><h3>ALUGUE SEU VEICULO COM SEGURANÇA E CREDIBILIDADE</h3>
-                  <br>
-                     <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
-                         <div class="col">    
-                             <div class="card mb-4 rounded-3 shadow-sm">
-                                <div class="card-header py-3 text-center"><!--HEADER-->
-                                    <h4 class="my-0 fw-normal">Ultimo veiculo Cadastrado</h4>
+                <div class="container-fluid">                
+                    <br>
+                    <img src="imagens/carro_logo.png" width="20%" height="20%"><h3>ALUGUE SEU VEICULO COM SEGURANÇA E CREDIBILIDADE</h3>
+                    <br>
+                    <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
+                        <div class="col">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Dados Gerais</h4>
                                 </div>
-                                <div class="card-body"><!--BODY-->
-                                    <?php 
-                                    require 'Handler.php';
-                                    $dados = Handler::arrayHandler();
-                                    if(isset($_POST['modelo'])){ //ARRUMAR O ISSET!!! ?>
-                                    <h5>Ultimo veículo cadastrado</h5>
-                                    <ul>
-                                    <li>Modelo: <?= $dados['modelo']?></li>  
-                                    <li>Placa: <?= $dados['placa']?> </li> 
-                                    <li>Ano: <?= $dados['ano']?> </li> 
-                                    <li>Estado: <?= $dados['estado']?></li> 
+                                <div class="card-body">            
+                                    <ul class="list-unstyled mt-3 mb-4">   
+                                        <li><?php
+                                            include 'total.php';
+                                        ?></li>
                                     </ul>
-                                    <?php } else { echo " "; } ?>  
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col">
-                             <div class="card mb-4 rounded-3 shadow-sm">
-                                 <div class="card-header py-3">
-                                     <h4 class="my-0 fw-normal"><b>Dados Gerais</b></h4>
-                                 </div>
-                                 <div class="card-body">            
-                                     <ul class="list-unstyled mt-3 mb-4">
-                                         
-                                         <li><?php
-                                             include 'total.php';
-                                         ?></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                   </section>
-                 </div>
-             </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
          </main>
          
                  
@@ -94,7 +72,7 @@
                  </div>
                  <div class="modal-body">                   
                      <!-- FORMULÁRIO DE CADASTRO -->
-                     <form action="index.php" method="POST">                        
+                     <form action="cadastro2.php" method="POST">                        
                          <div class="campo">
                              <label for="modelo">Modelo</label><br>
                              <input class="form-control" type="text" name="modelo" placeholder="Ex: Uno"required/><br>
@@ -107,8 +85,8 @@
                          <label for="estado">Estado</label> 
                              <select class="form-control" id="estado" name="estado" required>
                                  <option selected disabled value="0">Selecione</option>
-                                 <option value="disponivel">Disponível</option>
-                                 <option value="manutenção">Manutenção</option>
+                                 <option value="Disponivel">Disponível</option>
+                                 <option value="Manutenção">Manutenção</option>
                              </select>
                          </div>                        
                  </div>

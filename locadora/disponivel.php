@@ -1,3 +1,12 @@
+<?php
+    //abrir o arquivo de txt e colocar dados em um array
+    $arquivo = fopen("cadastro.txt", "r");
+    while(!feof($arquivo)){
+        $veiculo = explode("|", fgets($arquivo));
+    }
+    fclose($arquivo);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -26,8 +35,8 @@
                     <ul class="nav justify-content-end">
                         <li class="nav-item">                                                                          
                             <a href="index.php"><button type="button" class="btn btn-outline-dark btn-sm">INÍCIO</button></a>     
-                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS DISPONÍVEIS</button></a>
-                            <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVA DE VEÍCULOS</button></a>
+                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS</button></a>
+                            <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVAS</button></a>
                             <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
                         </div>
                         </il>
@@ -38,19 +47,17 @@
         <main>
             <section>
                 <div class="container-fluid">                
-                 <br>
-                 <img src="imagens/carro_logo.png" width="20%" height="20%"><h3>ALUGUE SEU VEICULO COM SEGURANÇA E CREDIBILIDADE</h3>
-                 <br>
+                    <br>
+                    <img src="imagens/carro_logo.png" width="20%" height="20%"><h3>ALUGUE SEU VEICULO COM SEGURANÇA E CREDIBILIDADE</h3>
+                    <br>
                     <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
-                        <div class="col">    
+                        <div class="col">
                             <div class="card mb-4 rounded-3 shadow-sm">
-                                <div class="card-header py-3 text-center"><!--HEADER-->
-                                    <h4 class="my-0 fw-normal">VEÍCULOS DISPONÍVEIS</h4>
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Dados Gerais</h4>
                                 </div>
-                                <div class="card-body"><!--BODY-->
-                                    
-
-                                <table class="table table-striped table-hover">
+                                <div class="card-body"> 
+                                    <table class="table table-striped table-hover">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Modelo</th>
@@ -61,18 +68,28 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <?php
-                                                    //codigo para listagem de veiculos
-                                                ?>
+                                            <?php
+                                                $numero = count($veiculo);
+                                                $i = 0;
+                                                while($i <= $numero-4){
+                                            ?>
+                                            <th scope="row"><?php echo $veiculo[$i]; ?></th>
+                                            <td><?php echo $veiculo[$i+2]; ?></td>
+                                            <td><?php echo $veiculo[$i+1]; ?></td>
+                                            <td><?php echo $veiculo[$i+3]; ?></td>
+                                            
+                                            <?php
+                                                $i = $i + 4;
+                                                echo "</tr>"; }
+                                            ?>
                                         </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
-                  </section>
+                    </div>
                 </div>
-            </div>
+            </section>
         </main>
         
                 
@@ -86,7 +103,7 @@
                 </div>
                 <div class="modal-body">                   
                     <!-- FORMULÁRIO DE CADASTRO -->
-                    <form action="index.php" method="POST">                        
+                    <form action="cadastro2.php" method="POST">                        
                         <div class="campo">
                             <label for="modelo">Modelo</label><br>
                             <input class="form-control" type="text" name="modelo" placeholder="Ex: Uno"required/><br>
@@ -99,8 +116,8 @@
                         <label for="estado">Estado</label> 
                             <select class="form-control" id="estado" name="estado" required>
                                 <option selected disabled value="0">Selecione</option>
-                                <option value="disponivel">Disponível</option>
-                                <option value="manutenção">Manutenção</option>
+                                <option value="Disponivel">Disponível</option>
+                                <option value="Manutenção">Manutenção</option>
                             </select>
                         </div>                        
                 </div>
@@ -112,7 +129,7 @@
                 </div>
                 </div>
             </div>
-            </div>
+        </div>
     
     
         <footer>

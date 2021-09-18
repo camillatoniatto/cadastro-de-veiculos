@@ -1,23 +1,23 @@
 <?php
-//PROVISÓRIO, apenas para testes
-$arquivo = fopen('cadastro.txt', 'r');
+    //PROVISÓRIO, apenas para testes
+    $arquivo = fopen('cadastro.txt', 'r');
     while(!feof($arquivo)){
         $veiculo = explode("|", fgets($arquivo));
     }
     fclose($arquivo);
     
-    $modelo = 0;
+    $disponivel = 0;
     foreach($veiculo as $valor){
-        if($valor == "Modelo"){
-            $modelo++;
+        if($valor == "Disponível"){
+            $disponivel++;
         }
     }
-    $placa = 0;
+    $manutencao = 0;
         foreach($veiculo as $valor){
-            if($valor == "Placa"){
-                $placa++;
+            if($valor == "Manutenção"){
+                $manutencao++;
             }
         }
-    echo "<b>Modelos:</b> $modelo, cadastrados.<br>";
-    echo "<b>Placas:</b> $placa, cadastradas.<br>";
+    echo "<b>Veículos disponíveis:</b> $disponivel, cadastrados.<br>";
+    echo "<b>Veículos em manutenção:</b> $manutencao, cadastrados.<br>";
 ?>

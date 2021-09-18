@@ -26,8 +26,8 @@
                     <ul class="nav justify-content-end">
                         <li class="nav-item">                                                                          
                             <a href="index.php"><button type="button" class="btn btn-outline-dark btn-sm">INÍCIO</button></a>     
-                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS DISPONÍVEIS</button></a>
-                            <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVA DE VEÍCULOS</button></a>
+                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS</button></a>
+                            <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVAS</button></a>
                             <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
                         </div>
                         </il>
@@ -50,21 +50,26 @@
                         <div class="card-body"><!--BODY-->
                             <form action="reserva.php" method="POST">
                                 <label for="inicio">Início da Reserva</label><br>
-                                <input type="datetime-local" name="inicio" required><br><br>
+                                <input type="datetime-local" class="form-control" name="inicio" required><br><br>
                                 <label for="fim">Fim da Reserva</label><br>
-                                <input type="datetime-local" name="fim" required><br><br>                          
+                                <input type="datetime-local" class="form-control" name="fim" required><br><br>                          
                                 <!-- OPTIONS PROVISÓRIAS -->                               
                                 <label for="veiculos">Veículos Disponíveis</label><br>
-                                    <select id="veiculos" name="veiculos" required>
+                                    <select class="form-control" id="veiculos" name="veiculos" required>
                                         <option selected disabled value="0">Selecione</option>
                                         <option value=" ">veiculo 1</option>
                                         <option value=" ">veiculo 2</option>
                                         <option value=" ">veiculo 3</option>
                                         <option value=" ">veiculo 4</option>
                                         <option value=" ">veiculo 5</option>
-                                    </select><br><br>                                    
-                                <input name="botao2" type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" value="Cancelar">
-                                <input name="botao1" type="submit" class="btn btn-outline-danger" value="Enviar">
+                                    </select><hr><br><br>
+                                    
+                                <div class="position-relative">
+                                    <div class="position-absolute bottom-0 end-0">                                
+                                        <input name="botao2" type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" value="Cancelar">
+                                        <input name="botao1" type="submit" class="btn btn-outline-danger" value="Enviar">
+                                    </div>
+                                </div>
                             </form>                                
                         </div>
                     </div>
@@ -84,7 +89,7 @@
                 </div>
                 <div class="modal-body">                   
                     <!-- FORMULÁRIO DE CADASTRO -->
-                    <form action="index.php" method="POST">                        
+                    <form action="cadastro2.php" method="POST">                        
                         <div class="campo">
                             <label for="modelo">Modelo</label><br>
                             <input class="form-control" type="text" name="modelo" placeholder="Ex: Uno"required/><br>
@@ -97,8 +102,8 @@
                         <label for="estado">Estado</label> 
                             <select class="form-control" id="estado" name="estado" required>
                                 <option selected disabled value="0">Selecione</option>
-                                <option value="disponivel">Disponível</option>
-                                <option value="manutenção">Manutenção</option>
+                                <option value="Disponivel">Disponível</option>
+                                <option value="Manutenção">Manutenção</option>
                             </select>
                         </div>                        
                 </div>
