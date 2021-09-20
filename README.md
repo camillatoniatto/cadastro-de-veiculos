@@ -5,17 +5,31 @@ Aplicação web para cadastrar e fazer reservas de veículos em uma empresa.
 ## Estrutura
 `index.php`: Página inicial.
 
-`cadastro.txt`: Arquivo txt para guardar arrays.
+`total.php`: Apresenta a quantidade de veículos disponíveis e em manutenção.
 
-`cadastro2.php`: Página para verificação do cadastro. (provisória?) 
+`cadastro.txt`: Arquivo txt para guardar arrays do cadastramento de veículos.
 
-`disponivel.php`: Página para listagem de veículos disponíveis para locação.
+`Handler.php`: Organização e manutenção de arrays do cadastro
 
-`total.php`: Lista o total de veículos. (provisória?) 
+`cadastro2.php`: Apresenta o ultimo cadastro feito. 
+
+`disponivel.php`: Página que lista todos os veículos cadastrados
 
 `reservas.php`: Página para realização de reservas.
 
-`Handler.php`: Organização e manutenção de arrays do cadastro
+`reservar.txt`: Arquivo txt para guardar arrays da reserva.
+
+`Handler2.php`: Organização e manutenção de arrays da reserva.
+
+`dados.php`: Apresenta a ultima reserva feita.
+
+`reservas2.php`: Página que lista todas as reservas.
+
+`editar.php`: Página para editar a situação a reserva selecionada.
+
+`editar2.php`: Código que realiza a alteração no arquivo de texto.
+
+
 
 
 ## Tecnologias Usadas
