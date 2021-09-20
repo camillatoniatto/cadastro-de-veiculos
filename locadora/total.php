@@ -1,5 +1,4 @@
 <?php
-    //PROVISÓRIO, apenas para testes
     $arquivo = fopen('cadastro.txt', 'r');
     while(!feof($arquivo)){
         $veiculo = explode("|", fgets($arquivo));
@@ -8,7 +7,7 @@
     
     $disponivel = 0;
     foreach($veiculo as $valor){
-        if($valor == "Disponível"){
+        if($valor == "Disponivel"){
             $disponivel++;
         }
     }
@@ -18,6 +17,6 @@
                 $manutencao++;
             }
         }
-    echo "<b>Veículos disponíveis:</b> $disponivel, cadastrados.<br>";
-    echo "<b>Veículos em manutenção:</b> $manutencao, cadastrados.<br>";
+    echo "<b>Veículos disponíveis:</b> $disponivel cadastrados.<br>";
+    echo "<b>Veículos em manutenção:</b> $manutencao cadastrados.<br>";
 ?>

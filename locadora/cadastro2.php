@@ -21,24 +21,23 @@ $dados = Handler::arrayHandler();
          <!--JS PARA O MODAL FUNCIONAR-->
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
          <header>   
-             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
                  <div class="container-fluid">                    
-                     <h1 class="titulo">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
-                         <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
-                         </svg>  
-                         <b>KATIAU</b>automóveis</h1>
-                     <ul class="nav justify-content-end">
-                         <li class="nav-item">                                                                          
-                            <a href="index.php"><button type="button" class="btn btn-outline-dark btn-sm">INÍCIO</button></a> 
-                            <a href="disponivel.php"><button type="button" class="btn btn-outline-dark btn-sm">VEÍCULOS</button></a>
-                             <a href="reservas.php"><button type="button" class="btn btn-outline-dark btn-sm">RESERVAS</button></a>
-                             <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
-                         </div>
-                         </il>
+                     <h1 class="text-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+                    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+                    </svg>  
+                    <b>KATIAU</b>automóveis</h1>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">                                                                          
+                            <a href="index.php"><button type="button" class="btn btn-outline-light btn-sm">INÍCIO</button></a> 
+                            <a href="disponivel.php"><button type="button" class="btn btn-outline-light btn-sm">VEÍCULOS</button></a>
+                            <a href="reservas.php"><button type="button" class="btn btn-outline-light btn-sm">RESERVAS</button></a>
+                            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
+                        </il>
                      </ul>
                  </div>
-             </nav>             
+             </nav>           
          </header>
          <main>
              <section>
@@ -85,12 +84,12 @@ $dados = Handler::arrayHandler();
          
                  
          <!--CÓDIGO JANELA MODAL-->
-         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-             <div class="modal-dialog">
-                 <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLabel">CADASTRO DE VEÍCULOS</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastroModalLabel">CADASTRO DE VEÍCULOS</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                  </div>
                  <div class="modal-body">                   
                      <!-- FORMULÁRIO DE CADASTRO -->
@@ -125,9 +124,9 @@ $dados = Handler::arrayHandler();
      
          <footer>
              <hr>
-             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+             <nav class="navbar fixed-bottom navbar-dark bg-dark">
                  <div class="container-fluid">                  
-                     <center>Desenvolvido por: Camilla Toniatto</center>
+                     <p class="text-light"> Desenvolvido por: Camilla Toniatto</p>
                  </div>
              </nav>
          </footer>

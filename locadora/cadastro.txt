@@ -1,1 +1,1 @@
-uno|BRA1E23|2010|Disponivel|teste1|abc123|1980|manutenção|
+Teste1|Placa1|Ano1|Disponivel|Teste2|Placa2|Ano2|Disponivel|Teste3|Placa3|Ano3|Disponivel|Teste4|Placa4|Ano4|Manutenção|Teste5|Placa5|Ano5|Disponivel|

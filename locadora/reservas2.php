@@ -1,12 +1,11 @@
 <?php
     //abrir o arquivo de txt e colocar dados em um array
-    $arquivo = fopen("cadastro.txt", "r");
+    $arquivo = fopen('reservar.txt', 'r');
     while(!feof($arquivo)){
-        $veiculo = explode("|", fgets($arquivo));
+        $reservas = explode("|", fgets($arquivo));
     }
     fclose($arquivo);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -22,9 +21,9 @@
         <style>body {background-color: lightgrey;}</style>
     </head>
     <body>
-        <!--JS PARA O MODAL FUNCIONAR-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <header>   
+    <!--JS PARA O MODAL FUNCIONAR-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <header>
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
                  <div class="container-fluid">                    
                      <h1 class="text-light">
@@ -37,11 +36,11 @@
                             <a href="index.php"><button type="button" class="btn btn-outline-light btn-sm">INÍCIO</button></a> 
                             <a href="disponivel.php"><button type="button" class="btn btn-outline-light btn-sm">VEÍCULOS</button></a>
                             <a href="reservas.php"><button type="button" class="btn btn-outline-light btn-sm">RESERVAS</button></a>
-                            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
+                            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#cadastroModal">CADASTRO DE VEÍCULOS</button>                                                 
                         </il>
                      </ul>
                  </div>
-             </nav>        
+             </nav>    
         </header>
         <main>
         <section>
@@ -50,52 +49,58 @@
             <img src="imagens/carro_logo.png" width="20%" height="20%"><h3>ALUGUE SEU VEICULO COM SEGURANÇA E CREDIBILIDADE</h3>
             <br>
         </div> 
-            <div class="container overflow-hidden">
-                    <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
-                        <div class="col">
-                            <div class="card mb-4 rounded-3 shadow-sm">
-                                <div class="card-header py-3">
-                                    <h4 class="my-0 fw-normal">Dados Gerais</h4>
-                                </div>
-                                <div class="card-body"> 
-                                    <table class="table table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Modelo</th>
-                                                <th scope="col">Placa</th>
-                                                <th scope="col">Ano</th>
-                                                <th scope="col">Situação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                            <?php
-                                                $numero = count($veiculo);
-                                                $i = 0;
-                                                while($i <= $numero-4){
-                                            ?>
-                                            <th scope="row"><?php echo $veiculo[$i]; ?></th>
-                                            <td><?php echo $veiculo[$i+1]; ?></td>
-                                            <td><?php echo $veiculo[$i+2]; ?></td>
-                                            <td><?php echo $veiculo[$i+3]; ?></td>
-                                            
-                                            <?php
-                                                $i = $i + 4;
-                                                echo "</tr>"; }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+        <div class="container overflow-hidden">
+            <div class="row justify-content-center row-cols-2 row-cols-md-1 mb-3 text-justify">
+                <div class="col">    
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3"><!--HEADER-->
+                            <h4 class="my-0 fw-normal">VEÍCULOS RESERVADOS</h4>
+                        </div>
+                        <div class="card-body"><!--BODY-->
+
+
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Início da Reserva</th>
+                                        <th scope="col">Fim da Reserva</th>
+                                        <th scope="col">Veículo</th>
+                                        <th scope="col">Estado da Reserva</th>
+                                        <th scope="col">Editar</th>                                                
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <?php
+                                        $numero = count($reservas);
+                                        $i = 0;
+                                        while($i <= $numero-4){
+                                    ?>
+                                    <td><?php echo $reservas[$i]; ?></td>
+                                    <td><?php echo $reservas[$i+1]; ?></td>
+                                    <td><?php echo $reservas[$i+2]; ?></td>
+                                    <td><?php echo $reservas[$i+3];?></td>
+                                    <td><a href="editar.php?posicao=<?php echo $i; ?>" class="btn btn-outline-danger btn-sm">Editar</a>
+                                    
+                                    
+                                    <?php
+                                        $i = $i + 4;
+                                        echo "</tr>"; }
+                                    ?>
+                                </tbody>
+                            </table>
+                            
+
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+        <section>
         </main>
-        
-                
-        <!--CÓDIGO JANELA MODAL-->
-        <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+            
+            <!--CÓDIGO JANELA MODAL-->
+            <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -130,9 +135,9 @@
                 </div>
                 </div>
             </div>
-        </div>
-    
-    
+            </div>
+
+
         <footer>
             <hr>
             <nav class="navbar fixed-bottom navbar-dark bg-dark">
@@ -140,6 +145,6 @@
                      <p class="text-light"> Desenvolvido por: Camilla Toniatto</p>
                  </div>
              </nav>
-        </footer>
+        </footer> 
     </body>
 </html>
