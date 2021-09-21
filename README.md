@@ -1,5 +1,5 @@
-# Locadora de Veículos em PHP
-Aplicação web para cadastrar e fazer reservas de veículos em uma empresa.
+# Locação de Veículos
+Aplicação web onde é realizado cadastros e reservas de veículos em uma empresa.
 
 
 ## Estrutura
@@ -25,11 +25,15 @@ Aplicação web para cadastrar e fazer reservas de veículos em uma empresa.
 
 `reservas2.php`: Página que lista todas as reservas.
 
-`editar.php`: Página para editar a situação a reserva selecionada.
+`editar_cancelar.php`: Página para cancelar a reserva selecionada.
+
+`editar_confirmar.php`: Página para confirmar a situação a reserva selecionada.
 
 `editar2.php`: Código que realiza a alteração no arquivo de texto.
 
+`imagens`: Pasta que contém imagens.
 
+- `carro_logo`: Imagem do logo.
 
 
 ## Tecnologias Usadas
