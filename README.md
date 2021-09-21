@@ -39,4 +39,4 @@ Aplicação web onde é realizado cadastros e reservas de veículos em uma empre
 ## Tecnologias Usadas
 - PHP
 - HTML5
-- Bootsrap
+- Bootstrap
