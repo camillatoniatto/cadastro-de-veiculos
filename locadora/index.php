@@ -29,7 +29,7 @@
                             <a href="index.php"><button type="button" class="btn btn-outline-light btn-sm">INÍCIO</button></a> 
                             <a href="disponivel.php"><button type="button" class="btn btn-outline-light btn-sm">VEÍCULOS</button></a>
                             <a href="reservas.php"><button type="button" class="btn btn-outline-light btn-sm">RESERVAS</button></a>
-                            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>                                                 
+                            <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#cadastroModal">CADASTRO DE VEÍCULOS</button>                                                 
                         </il>
                      </ul>
                  </div>

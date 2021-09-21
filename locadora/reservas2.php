@@ -1,5 +1,5 @@
 <?php
-    //abrir o arquivo de txt e colocar dados em um array
+    //abrir o arquivo de txt para leitura
     $arquivo = fopen('reservar.txt', 'r');
     while(!feof($arquivo)){
         $reservas = explode("|", fgets($arquivo));
@@ -66,7 +66,7 @@
                                         <th scope="col">Fim da Reserva</th>
                                         <th scope="col">Veículo</th>
                                         <th scope="col">Estado da Reserva</th>
-                                        <th scope="col">Editar</th>                                                
+                                        <th scope="col">Alterar Situação</th>                                                
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,9 +80,10 @@
                                     <td><?php echo $reservas[$i+1]; ?></td>
                                     <td><?php echo $reservas[$i+2]; ?></td>
                                     <td><?php echo $reservas[$i+3];?></td>
-                                    <td><a href="editar.php?posicao=<?php echo $i; ?>" class="btn btn-outline-danger btn-sm">Editar</a>
-                                    
-                                    
+                                    <td>
+                                        <a href="editar_cancelar.php?posicao=<?php echo $i; ?>" class="btn btn-outline-secondary btn-sm">Cancelar</a>
+                                        <a href="editar_confirmar.php?posicao=<?php echo $i; ?>" class="btn btn-outline-danger btn-sm">Confirmar</a>
+                                    </td>                                                                         
                                     <?php
                                         $i = $i + 4;
                                         echo "</tr>"; }

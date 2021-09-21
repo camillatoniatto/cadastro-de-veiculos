@@ -1,13 +1,12 @@
 <?php
     $arquivo = fopen("reservar.txt", "r");
     $arquivo2 = fopen("reservar2.txt", "a+");
-    while(!feof($arquivo))
-    {
+    while(!feof($arquivo)){
         $reservar = explode("|", fgets($arquivo));
     }
     fclose($arquivo);
     
-    //TENTAR ARRUMAR O CONTADOR 
+    $posicao = $_GET['posicao'];
     $estado = $_POST['estado'];
     $reservar[$posicao+3] = $estado;
 
@@ -23,6 +22,6 @@
         $i++;
     }
     fclose($arquivo);
-    echo "<script>alert('Situação atualizada com sucesso!');
+    echo "<script>alert('Reserva atualizada com sucesso!');
             window.location.href='reservas2.php';</script>";
 ?>

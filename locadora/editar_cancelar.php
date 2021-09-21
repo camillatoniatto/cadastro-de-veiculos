@@ -1,12 +1,11 @@
 <?php
-//abrir o arquivo de txt e colocar dados em um array
-$posicao = $_GET['posicao'];
-$arquivo = fopen("reservar.txt", "r");
-while (!feof($arquivo)) {
-    $veiculo = explode("|", fgets($arquivo));
-}
-fclose($arquivo);
-
+    //abrir o arquivo de txt para leitura
+    $posicao = $_GET['posicao'];
+    $arquivo = fopen("reservar.txt", "r");
+    while(!feof($arquivo)){
+        $veiculo = explode("|", fgets($arquivo));
+    }
+    fclose($arquivo);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,11 +20,7 @@ fclose($arquivo);
     <title>KATIAU automóveis</title>
     <!-- STYLESHEET -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: lightgrey;
-        }
-    </style>
+    <style>body { background-color: lightgrey; } </style>
 </head>
 
 <body>
@@ -45,7 +40,7 @@ fclose($arquivo);
                         <a href="index.php"><button type="button" class="btn btn-outline-light btn-sm">INÍCIO</button></a>
                         <a href="disponivel.php"><button type="button" class="btn btn-outline-light btn-sm">VEÍCULOS</button></a>
                         <a href="reservas.php"><button type="button" class="btn btn-outline-light btn-sm">RESERVAS</button></a>
-                        <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">CADASTRO DE VEÍCULOS</button>
+                        <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#cadastroModal">CADASTRO DE VEÍCULOS</button>
                         </il>
                 </ul>
             </div>
@@ -80,20 +75,15 @@ fclose($arquivo);
 
                                         <label>Veículo:</label>
                                         <p><?php echo $veiculo[$posicao + 2]; ?></p>
-
-                                        
-                                        <label for="estado">Situação da Reserva</label><br>
-                                        <select class="form-control" name="estado" required>
-                                            <option selected>Selecione</option>
-                                            <option value="Provisória">Provisória</option>
-                                            <option value="Confirmada">Confirmar</option>
-                                            <option value="Cancelada">Cancelar</option>
-                                        </select>                                    
+                                    
+                                    <input class="form-check-input" type="radio" name="estado" id="estado" value="Cancelada" checked>
+                                    <label class="form-check-label" for="estado"><b>CANCELAR</b></label>                                  
                                     </div>
                                     <hr><br><br>
                                     <!--BOTÃO FORMULARIO-->
                                     <div class="position-relative">
                                         <div class="position-absolute bottom-0 end-0">
+                                            <a href="reservas2.php"><button type="button" class="btn btn-outline-secondary">Voltar</button></a>
                                             <button type="submit" class="btn btn-outline-danger">Atualizar</button>
                                         </div>
                                     </div>
