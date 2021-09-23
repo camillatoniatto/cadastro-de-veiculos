@@ -27,7 +27,7 @@ Aplicação web onde é realizado cadastros e reservas de veículos em uma empre
 
 `editar_cancelar.php`: Página para cancelar a reserva selecionada.
 
-`editar_confirmar.php`: Página para confirmar a situação a reserva selecionada.
+`editar_confirmar.php`: Página para confirmar a reserva selecionada.
 
 `editar2.php`: Código que realiza a alteração no arquivo de texto.
 
